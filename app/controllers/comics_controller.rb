@@ -25,17 +25,23 @@ class ComicsController < ApplicationController
 
     get '/comics/:id' do
         authenticate
-		@comic = Comic.find(params[:id])
-		erb :"comics/show"
+        @comic = Comic.find_by(id: params[:id])
+        if @comic 
+            erb :"comics/show"
+        else 
+            erb :error
+        end 
     end
+
+    #Edit 
 
     get '/comics/:id/edit' do
         authenticate 
-        @comic = Comic.find(params[:id])
-        if @comic.user == current_user
+        @comic = Comic.find_by(id: params[:id])
+        if @comic
             erb :'comics/edit'
         else 
-            redirect '/comics'
+            erb :error
         end
     end 
 
@@ -47,6 +53,8 @@ class ComicsController < ApplicationController
             redirect 'comics/#{@comic.id}/edit'
         end 
     end 
+
+    #Delete 
 
     get '/comics/:id/delete' do
         authenticate
