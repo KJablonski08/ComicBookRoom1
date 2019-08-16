@@ -14,7 +14,7 @@ class ComicsController < ApplicationController
     post '/comics' do
         authenticate
         u = current_user 
-        u.comics.build(title: params[:title], series: params[:series], issue: params[:issue], author: params[:author])
+        u.comics.build(title: params[:title], series: params[:series], issue: params[:issue], author: params[:author], details: params[:details], anonymous?: !!params[:anonymous?], public?: !!params[:public?])
         if u.save 
             redirect '/comics'
         else 
@@ -25,8 +25,9 @@ class ComicsController < ApplicationController
 
     get '/comics/:id' do
         authenticate
-		@comics = Comic.find(params[:id])
+		@comic = Comic.find(params[:id])
 		erb :"comics/show"
-	end
+    end
+
 
 end  

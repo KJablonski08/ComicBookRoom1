@@ -1,21 +1,21 @@
-<h1><%= @comics.title %></h1>
+<h1><%= @comic.title %></h1>
 
-	<% if @comics.anonymous? && @comics.user == current_user%>
+	<% if @comic.anonymous? && @comic.user == current_user%>
 		<p>You posted this anonymously 
-	<% elsif @comics.anonymous? %>
+	<% elsif @comic.anonymous? %>
 		<p>Posted by Anonymous
-	<% elsif @comics.user == current_user%>
+	<% elsif @comic.user == current_user%>
 		<p>You posted this
 	<% else %>
-		<p>Posted by <a href="/users/<%=@comics.user.id%>"><%=@comics.user.username%></a>
+		<p>Posted by <a href="/users/<%=@comic.user.id%>"><%=@comic.user.username%></a>
 	<% end %>
-    <p><%= @comics.created_at.strftime("%m/%d/%y at %I:%M%p %Z")%></p>
-    <h3>Series Title: <%= @comics.series %></h3>
-    <h3>Issue Number: <%= @comics.issue %></h3>
-    <h3>Author Name: <%= @comics.author %></h3>
+    <p><%= @comic.created_at.strftime("%m/%d/%y at %I:%M%p %Z")%></p>
+    <h3>Series Title: <%= @comic.series %></h3>
+    <h3>Issue Number: <%= @comic.issue %></h3>
+    <h3>Author Name: <%= @comic.author %></h3>
     <strong>Details: </strong>
 	<div>
-		<h5><%= @comics.details %></h5>
+		<h5><%= @comic.details %></h5>
 	</div>
 
 
