@@ -10,3 +10,9 @@
     <br/><br/>
     <input type="submit" value="Sign Up">
 </form> 
+
+<% if @user && @user.errors.any? %> 
+    <% @user.errors.full_messages.each do |e| %>
+        <p class="danger"><%= e %></p>
+    <% end %> 
+<% end %> 
