@@ -54,10 +54,12 @@ class ComicsController < ApplicationController
         erb :'comics/delete'
     end 
 
-    delete '/comics/:id/delete' do 
-        comic = Comic.find(params[:id])
-        comic.destroy
-        redirect '/comics'
+    delete '/comics/:id' do 
+        @comic = Comic.find_by(id: params[:id])
+        if @comic
+            @comic.destroy
+            redirect '/comics'
+        end
     end 
 
 end  
