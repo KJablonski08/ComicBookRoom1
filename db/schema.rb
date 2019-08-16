@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_16_035043) do
+ActiveRecord::Schema.define(version: 2019_08_16_041649) do
+
+  create_table "comics", force: :cascade do |t|
+    t.string "title"
+    t.string "series"
+    t.integer "issue"
+    t.string "author"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
