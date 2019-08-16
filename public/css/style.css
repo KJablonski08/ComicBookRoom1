@@ -1,4 +1,6 @@
 html {
     background-color :blue;
-
+    background-image: url("background.jpg");
+    background-position: 0% 45%;
+    background-size: cover;
 }
