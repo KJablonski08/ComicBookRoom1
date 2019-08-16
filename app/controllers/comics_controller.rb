@@ -29,5 +29,23 @@ class ComicsController < ApplicationController
 		erb :"comics/show"
     end
 
+    get '/comics/:id/edit' do
+        authenticate 
+        @comic = Comic.find(params[:id])
+        if @comic.user == current_user
+            erb :'comics/edit'
+        else 
+            redirect '/comics'
+        end
+    end 
+
+    patch '/comics/:id' do 
+        @comic = Comic.find(params[:id])
+        if @comic.update(title: params[:title], series: params[:series], issue: params[:issue], author: params[:author], details: params[:details], anonymous?: !!params[:anonymous?], public?: !!params[:public?])
+            redirect 'comics'
+        else 
+            redirect 'comics/#{@comic.id}/edit'
+        end 
+    end 
 
 end  

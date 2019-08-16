@@ -1,32 +1,31 @@
 <h1 >Edit Comic Book</h1>
 
-<% if !!@messages %>
-    <p class="danger"><%= @messages %></p>
-<% end %> 
-
-<form action="/comics/<%= @comic.id% >" method="post">
-		<input type="hidden" id="hidden" name="_method" value="patch"/>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title"/>
+<form action="/comics/<%= @comic.id %>" method="post">
+	<input type="hidden" id="hidden" name="_method" value="patch"/>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="<%= @comic.title %>"/>
         <br/><br/>
-        <label for="series">Series Title:</label>
-        <input type="text" id="series" name="series"/>
+    <input type="hidden" id="hidden" name="_method" value="patch"/>
+    <label for="series">Series:</label>
+    <input type="text" id="series" name="series" value="<%= @comic.series %>"/>
         <br/><br/>
-        <label for="issue">Issue Number:</label>
-		<input type="text" id="issue" name="issue"/>
+    <input type="hidden" id="hidden" name="_method" value="patch"/>
+    <label for="issue">Issue:</label>
+    <input type="text" id="issue" name="issue" value="<%= @comic.issue %>"/>
         <br/><br/>
-        <label for="author">Author Name:</label>
-		<input type="text" id="author" name="author"/>
+    <input type="hidden" id="hidden" name="_method" value="patch"/>
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" value="<%= @comic.author %>"/>
         <br/><br/>
-        <textarea class="textarea" type="text" id="details" name="details" placeholder="Wanna share more details? (optional)"></textarea>
+    <textarea class="textarea" type="text" id="details" name="details"/><%=@comic.details%></textarea> 
         <br/><br/>
-        <label for="anonymous?">Post comic anonymously? </label>
-        <input type="checkbox" id="anonymous?" name="anonymous?"/>
+    <label for="anonymous?">Post comic anonymously? </label>
+    <input type="checkbox" id="anonymous?" name="anonymous?" <%="checked" if @comic.anonymous? %>/>
         <br/><br/>        
-		<label for="public?">Is this a public comic? </label>
-		<input type="checkbox" id="public?" name="public?" 
+	<label for="public?">Is this a public comic? </label>
+	<input type="checkbox" id="public?" name="public?" <%="checked" if @comic.public? %>/>
         <br/><br/><br/>
-        <input type="submit" value="Share"/>
+    <input type="submit" value="Save Changes"/>
         <br/><br/>
-		<a href="/comics">Cancel</a>
-	</form>
+    <a href="/comics/<%= @comic.id %>">Cancel</a>
+</form>
