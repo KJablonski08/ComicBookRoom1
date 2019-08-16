@@ -8,4 +8,8 @@
     <br/>
     <input type="submit" value="login">
 
+    <% if @failed %>
+        <p class="danger">Your username/password combo was incorrect</p>
+    <% end %> 
+    
 </form> 
