@@ -48,4 +48,16 @@ class ComicsController < ApplicationController
         end 
     end 
 
+    get '/comics/:id/delete' do
+        authenticate
+        @comic = Comic.find(params[:id])
+        erb :'comics/delete'
+    end 
+
+    delete '/comics/:id/delete' do 
+        comic = Comic.find(params[:id])
+        comic.destroy
+        redirect '/comics'
+    end 
+
 end  
