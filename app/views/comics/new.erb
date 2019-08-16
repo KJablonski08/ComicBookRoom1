@@ -1,0 +1,31 @@
+<h1 >New Comic Book</h1>
+
+<% if !!@messages %>
+    <p class="danger"><%= @messages %></p>
+<% end %> 
+
+<form action="/comics" method="post">
+	    <label for="title">Title:</label>
+		<input type="text" id="title" name="title"/>
+        <br/><br/>
+        <label for="series">Series Title:</label>
+        <input type="text" id="series" name="series"/>
+        <br/><br/>
+        <label for="issue_number">Issue Number:</label>
+		<input type="text" id="issue_number" name="issue_number"/>
+        <br/><br/>
+        <label for="author_name">Author Name:</label>
+		<input type="text" id="author_name" name="author_name"/>
+        <br/><br/>
+        <textarea class="textarea" type="text" id="comic_details" name="details" placeholder="Wanna share more details? (optional)"></textarea>
+        <br/><br/>
+        <label for="anonymous">Post comic anonymously? </label>
+        <input type="checkbox" id="anonymous" name="anonymous"/>
+        <br/><br/>        
+		<label for="public">Is this a public comic? </label>
+		<input type="checkbox" id="public" name="public" 
+        <br/><br/><br/>
+        <input type="submit" value="Share"/>
+        <br/><br/>
+		<a href="/comics">Cancel</a>
+	</form>

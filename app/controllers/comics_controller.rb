@@ -6,9 +6,21 @@ class ComicsController < ApplicationController
         erb :'comics/index'
     end 
 
-    get '/comics/:id' do 
-        @comic = Comic.find(params[:id])
-        erb :'comics/show.html'
+    get '/comics/new' do
+        authenticate
+        erb :'comics/new'
+    end 
+
+    post '/comics' do
+        authenticate
+        u = current_user 
+        u.comics.build(title: params[:title], series: params[:series], issue: params[:issue], author: params[:author])
+        if u.save 
+            redirect '/comics'
+        else 
+            @messages = "There was trouble submitting your form"
+            erb :'/comics/new'
+        end 
     end 
 
 end  

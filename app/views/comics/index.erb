@@ -1,3 +1,31 @@
-<% @comics.each do |comic| %>
-    <%= erb :'comics/_comic', locals: {user: comic.user, comic: comic}  %>
-<% end %>  
+<a href='/comics/new'>New Comic</a> 
+
+<% if @comics.count > 0 %>
+	<h2>Excelsior!</h2>
+		<% @comics.each do |comic| %>
+			<a href="/comics/<%=comic.id%>">
+				<article>
+				    <div>
+			            <p>
+			        		<% if comic.anonymous %>
+								<strong>Anonymous - </strong>
+							<% else %>
+								<strong><%= comic.user.username %> - </strong>
+							<% end %>
+								<em><%= comic.title %></em>
+							</p>
+								<%= comic.created_at.strftime("%m/%d/%y at %I:%M%p %Z")%>
+					</div>
+					<div>
+                        <%=comic.series%>
+                        <%=comic.issue%>
+                        <%=comic.author%>
+                        <%=comic.details%>
+				    </div>
+				</article>
+			</a>
+			<br>
+		<% end %>
+	<% else %>
+		<h2>No public comics to display</h2>
+	<% end %>
