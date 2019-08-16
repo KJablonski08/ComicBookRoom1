@@ -13,7 +13,13 @@
 
         <nav>
             <% if logged_in? %> 
-                <a href='/comics'>Comics</a>
+                <p><a href="/home">Home</a>
+                <a href="/comics">Comics</a>
+                <form action="/logout" method="post" class="logout">
+                 <input type="hidden" name="_method" value="delete">
+                 <input type="submit" value="Logout">
+                </form>
+                </p>
             <% end %> 
         </nav>
 
