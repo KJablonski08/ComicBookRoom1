@@ -29,28 +29,29 @@ class ComicsController < ApplicationController
         if @comic 
             erb :"comics/show"
         else 
-            erb :error
+            erb :error, layout: false 
         end 
     end
 
     #Edit 
 
     get '/comics/:id/edit' do
-        authenticate 
         @comic = Comic.find_by(id: params[:id])
+        authenticate_user(@comic)
         if @comic
             erb :'comics/edit'
         else 
-            erb :error
+            erb :error, layout: false
         end
     end 
 
     patch '/comics/:id' do 
-        @comic = Comic.find(params[:id])
+        @comic = Comic.find_by(id: params[:id])
+        authenticate_user(@comic)
         if @comic.update(title: params[:title], series: params[:series], issue: params[:issue], author: params[:author], details: params[:details], anonymous?: !!params[:anonymous?], public?: !!params[:public?])
             redirect 'comics'
         else 
-            redirect 'comics/#{@comic.id}/edit'
+            erb :error, layout: false
         end 
     end 
 
@@ -64,6 +65,7 @@ class ComicsController < ApplicationController
 
     delete '/comics/:id' do 
         @comic = Comic.find_by(id: params[:id])
+        authenticate_user(@comic)
         if @comic
             @comic.destroy
             redirect '/comics'

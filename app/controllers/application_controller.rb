@@ -31,5 +31,12 @@ class ApplicationController < Sinatra::Base
                 redirect '/login' 
             end 
         end 
+
+        def authenticate_user(comic)
+            authenticate
+            redirect '/home' if !comic
+            redirect '/home' if current_user != @comic.user
+        end 
+    
     end 
 end 

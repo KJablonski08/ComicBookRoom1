@@ -7,7 +7,7 @@
 	<% elsif @comic.user == current_user%>
 		<p>You posted this
 	<% else %>
-		<p>Posted by <a href="/users/<%=@comic.user.id%>"><%=@comic.user.username%></a>
+		<p>Posted by <a href="/users/<%=@comic.user.id%>"><%=comic.user.username%></a>
 	<% end %>
     <p><%= @comic.created_at.strftime("%m/%d/%y at %I:%M%p %Z")%></p>
     <h3>Series Title: <%= @comic.series %></h3>
