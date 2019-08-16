@@ -7,7 +7,7 @@
 				<article>
 				    <div>
 			            <p>
-			        		<% if comic.anonymous %>
+			        		<% if comic.anonymous? %>
 								<strong>Anonymous - </strong>
 							<% else %>
 								<strong><%= comic.user.username %> - </strong>
@@ -16,12 +16,6 @@
 							</p>
 								<%= comic.created_at.strftime("%m/%d/%y at %I:%M%p %Z")%>
 					</div>
-					<div>
-                        <%=comic.series%>
-                        <%=comic.issue%>
-                        <%=comic.author%>
-                        <%=comic.details%>
-				    </div>
 				</article>
 			</a>
 			<br>

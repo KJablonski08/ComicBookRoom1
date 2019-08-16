@@ -23,4 +23,10 @@ class ComicsController < ApplicationController
         end 
     end 
 
+    get '/comics/:id' do
+        authenticate
+		@comics = Comic.find(params[:id])
+		erb :"comics/show"
+	end
+
 end  
