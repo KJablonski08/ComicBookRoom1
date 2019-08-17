@@ -1,15 +1,16 @@
-<form action="/login" method="post">
 
-    <label for="username">Username</label>
-    <input id="username" type="text" name="username">
-    <br/>
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password">
-    <br/>
-    <input type="submit" value="login">
-
+<div class="login_form">
+  <form action="/login" method="post">
+    <br/><br/>
+    <label class="label" for="username">Username:</label>
+    <input class="input" id="username" type="text" name="username">
+    <br/><br/>
+    <label class="label" for="password">Password:</label>
+    <input class="input" id="password" type="password" name="password">
+    <br/><br/>
+    <input class="button" type="submit" value="login">
     <% if @failed %>
         <p class="danger">Your username/password combo was incorrect</p>
-    <% end %> 
-    
-</form> 
+    <% end %>  
+  </form> 
+<div> 
