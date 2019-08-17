@@ -1,6 +1,8 @@
-<h3>Delete this Comic Book?</h3>
+<div class="centered">
+<h2>Delete this Comic Book?</h2>
 <form action="/comics/<%= @comic.id %>" method="post">
 	<input type="hidden" id="hidden" name="_method" value="delete">
-	<input type="submit" value="Confirm Delete">
-	<a href="/comics">Cancel</a>
+	<input class="button submit" type="submit" value="Confirm Delete">
+	<a class="cancel" href="/comics">Cancel</a>
 </form>
+</div>

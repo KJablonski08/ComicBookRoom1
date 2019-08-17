@@ -1,31 +1,29 @@
-<h1 >New Comic Book</h1>
+
 
 <% if !!@messages %>
     <p class="danger"><%= @messages %></p>
 <% end %> 
 
-<form action="/comics" method="post">
-	    <label for="title">Title:</label>
-		<input type="text" id="title" name="title"/>
+<div class="centered">
+  <h1 >New Comic Book</h1>
+  <form action="/comics" method="post">
+		<input class="input" type="text" id="title" name="title" placeholder="Title"/>
         <br/><br/>
-        <label for="series">Series Title:</label>
-        <input type="text" id="series" name="series"/>
+        <input class="input" type="text" id="series" name="series" placeholder="Series Title"/>
         <br/><br/>
-        <label for="issue">Issue Number:</label>
-		<input type="text" id="issue" name="issue"/>
+		<input class="input" type="text" id="issue" name="issue" placeholder="Issue Number"/>
         <br/><br/>
-        <label for="author">Author Name:</label>
-		<input type="text" id="author" name="author"/>
+		<input class="input" type="text" id="author" name="author" placeholder="Author Name"/>
         <br/><br/>
-        <textarea class="textarea" type="text" id="details" name="details" placeholder="Wanna share more details? (optional)"></textarea>
+        <textarea class="input" type="text" id="details" name="details" placeholder="Wanna share more details? (optional)"></textarea>
         <br/><br/>
-        <label for="anonymous?">Post comic anonymously? </label>
-        <input type="checkbox" id="anonymous?" name="anonymous?"/>
-        <br/><br/>        
-		<label for="public?">Is this a public comic? </label>
+        <label for="anonymous?">Share Anonymously? </label>
+        <input type="checkbox" id="anonymous?" name="anonymous?"/>  
+		<label for="public?">Share Publicly? </label>
 		<input type="checkbox" id="public?" name="public?" 
         <br/><br/><br/>
-        <input type="submit" value="Share"/>
+        <input class="button submit" type="submit" value="Share"/>
         <br/><br/>
-		<a href="/comics">Cancel</a>
-	</form>
+		<a class="cancel" id="cancel" href="/comics">Cancel</a>
+  </form>
+</div>

@@ -1,11 +1,9 @@
-<a href='/comics/new'>New Comic</a> 
-
+<div class="centered">
 <% if @comics.count > 0 %>
 	<h2>Excelsior!</h2>
 		<% @comics.each do |comic| %>
 			<a href="/comics/<%=comic.id%>">
-				<article>
-				    <div>
+				    <article class="comic-box">
 			            <p>
 			        		<% if comic.anonymous? %>
 								<strong>Anonymous - </strong>
@@ -14,12 +12,12 @@
 							<% end %>
 								<em><%= comic.title %></em>
 							</p>
-								<%= comic.created_at.strftime("%m/%d/%y at %I:%M%p %Z")%>
-					</div>
-				</article>
+								<%= comic.created_at.strftime("%B %d, %Y at %I:%M%p %Z")%>
+					</article>
 			</a>
 			<br>
 		<% end %>
 	<% else %>
 		<h2>No public comics to display</h2>
 	<% end %>
+</div>

@@ -1,14 +1,25 @@
 body {
     background-image: url("background.jpg");
-    background-position: 0% 35%;
+    background-position: 0% 40%;
     background-size: cover;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: maroon;
+}
+
+a:hover {
+    color: black;
+    font-weight: bold;
 }
 
 .button {
     background-color: white;
-    border-radius: 4px;
     text-decoration: none;
+    border: none;
 }
 
 .button:hover {
@@ -16,11 +27,37 @@ body {
     color: white;
   }
 
+.danger {
+    color: white; 
+    font-weight: bold; 
+}
+
+#cancel{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid white; 
+}
+
 /* navigation bar */
 
 nav {
     background-color: white;
     width: 100%;
+    border-bottom: 5px solid Gold;
+}
+
+.nav-button {
+    border-radius: 5px;
+    border: 2px solid gold; 
+    margin: 10px 5px 5px 5px;
+    float: right; 
+    vertical-align: 0%;
+    padding: 5px 15px;
+}
+
+.nav-button:hover {
+    background-color: gold;
 }
 
 .logo {
@@ -29,19 +66,29 @@ nav {
     display: inline-block;
 }
 
+.logout {
+    display: inline-block;
+}
+
 /* '/' */
 
 .login_page{
-    margin-top: 250px;
+    margin-top: 100px;
     text-align: center
 }
 
 #login_button {
     padding: 10px 57px; 
+    border-radius: 2px;
 }
 
 #signup_button {
     padding: 10px 52px;
+    border-radius: 2px;
+}
+
+h3 {
+    padding: 0 100px;
 }
 
 /* '/sessions/login */
@@ -49,4 +96,69 @@ nav {
 .login_form {
     margin-top: 150px;
     text-align: center
+}
+
+.input {
+    width: 25%;
+    padding: 15px;
+    border: none;
+}
+
+.submit {
+    padding: 5px 45px;
+    border: none;
+}
+
+/* '/sessions/signup */
+
+.signup_form {
+    margin-top: 100px;
+    text-align: center
+}
+
+.input {
+    width: 25%;
+    padding: 15px;
+    border: none;
+}
+
+.submit {
+    padding: 5px 45px;
+    border: none;
+}
+
+/* '/sessions/signup */
+
+.centered{ 
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* '/comics/new */
+
+.cancel{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid white; 
+}
+
+/* '/comics */
+
+.comic-box {
+    background-color: whitesmoke;
+    opacity: .60;
+    padding: 5px 300px;
+}
+
+.comic-box p{
+    border-bottom: 8px solid maroon;
+}
+
+/* '/comics/show */
+
+.comic-details {
+    background-color: whitesmoke;
+    opacity: .60;
+    color: maroon;
 }

@@ -12,30 +12,19 @@
           <img class="logo" src="/css/comic_book_room.jpg" alt="comic book room">
           <% if logged_in? %> 
             <% quick_nav = [
-              ['Home', '/home', 'Our home page'],
+              ['Logout', '/logout', 'Logout'],
+              ['Add', '/comics/new', 'Add'],
               ['Comics', '/comics', 'Explore'],
-              ['Add', '/comics/new', 'Add']
+              ['Home', '/home', 'Our home page']
               ] %>
             
               <% quick_nav.each do |item| %>
-                <span class=""><a href="<%= item[1] %>" title="<%= item[2] %>"><%= item[0] %>
+                <span class="nav-button"><a href="<%= item[1] %>" title="<%= item[2] %>"><%= item[0] %>
                 </a></span>
               <% end %>
-              
+
           <% end %>    
         </nav>
-
-        <div>
-            <% if logged_in? %> 
-                <p><a href="/home">Home</a>
-                <a href="/comics">Comics</a>
-                <form action="/logout" method="post" class="logout">
-                 <input type="hidden" name="_method" value="delete">
-                 <input type="submit" value="Logout">
-                </form>
-                </p>
-            <% end %> 
-        </div> 
 
         <%= yield %> 
 

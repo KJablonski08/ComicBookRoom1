@@ -1,4 +1,4 @@
-<h1><%= @comic.title %></h1>
+<div class="centered">
 
 	<% if @comic.anonymous? && @comic.user == current_user%>
 		<p>You posted this anonymously 
@@ -7,18 +7,21 @@
 	<% elsif @comic.user == current_user%>
 		<p>You posted this
 	<% else %>
-		<p>Posted by <a href="/users/<%=@comic.user.id%>"><%=@comic.user.username%></a>
+		<p>Posted by <%=@comic.user.username%></p>
 	<% end %>
-    <p><%= @comic.created_at.strftime("%m/%d/%y at %I:%M%p %Z")%></p>
-    <h3>Series Title: <%= @comic.series %></h3>
-    <h3>Issue Number: <%= @comic.issue %></h3>
-    <h3>Author Name: <%= @comic.author %></h3>
-    <strong>Details: </strong>
-	<div>
-		<h5><%= @comic.details %></h5>
-	</div>
+	<p><%= @comic.created_at.strftime("%m/%d/%y at %I:%M%p %Z")%></p>
+	<br/>
+	<div class="comic-details">
+		<h1><%= @comic.title %></h1>
+    	<h3>Series Title: <%= @comic.series %></h3>
+    	<h3>Issue Number: <%= @comic.issue %></h3>
+    	<h3>Author Name: <%= @comic.author %></h3>
+		<h3>Details: <%= @comic.details %></h3>
+	</div> 
+	
 <% if @comic.user == current_user %>
-	<a href="/comics/<%=@comic.id%>/edit">Edit Comic</a>
-	<a href="/comics/<%=@comic.id%>/delete">Delete Comic</a>
+	<a class="button submit" href="/comics/<%=@comic.id%>/edit">Edit Comic</a>
+	<a class="button submit" href="/comics/<%=@comic.id%>/delete">Delete Comic</a>
 <% end %> 
+</div>
 
