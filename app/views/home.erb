@@ -3,7 +3,7 @@
 <h1>Welcome <%= current_user.username %></h1> 
 <br/>
 
-<% current_user.comics.find_all{|comic|comic.public? && !comic.anonymous?}.sort.reverse.each do |comic| %>
+<% current_user.comics.find_all{|comic|comic}.sort.reverse.each do |comic| %>
     <a href="/comics/<%=comic.id%>">
         <article class="comic-box">
             <p>
