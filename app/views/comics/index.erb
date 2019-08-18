@@ -6,14 +6,10 @@
 			<a href="/comics/<%=comic.id%>">
 				    <article class="comic-box">
 			            <p>
-			        		<% if comic.anonymous? %>
-								<strong>Anonymous - </strong>
-							<% else %>
-								<strong><%= comic.series %> - </strong>
-							<% end %>
-								<em><%= comic.title %></em>
+							<strong><%= comic.series %> - </strong>
+							<%= comic.title %>
 							</p>
-								<%= comic.created_at.strftime("%B %d, %Y at %I:%M%P")%>
+							<%= comic.created_at.strftime("%B %d, %Y at %I:%M%P")%>
 					</article>
 			</a>
 			<br>

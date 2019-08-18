@@ -1,11 +1,11 @@
 <div class="centered">
 
 	<% if @comic.anonymous? && @comic.user == current_user%>
-		<p>You posted this anonymously 
+		<p>You posted this anonymously</p>
 	<% elsif @comic.anonymous? %>
-		<p>Posted by Anonymous
+		<p>Posted by Anonymous</p>
 	<% elsif @comic.user == current_user%>
-		<p>You posted this
+		<p>You posted this</p>
 	<% else %>
 		<p>Posted by <%=@comic.user.username%></p>
 	<% end %>
