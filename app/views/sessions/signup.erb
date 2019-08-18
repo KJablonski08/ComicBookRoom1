@@ -12,10 +12,12 @@
     <br/><br/>
     <input class="button submit" type="submit" value="Sign Up">
   </form> 
-</div>
 
-<% if @user && @user.errors.any? %> 
+  <% if @user && @user.errors.any? %> 
     <% @user.errors.full_messages.each do |e| %>
         <p class="danger"><%= e %></p>
     <% end %> 
 <% end %> 
+
+</div>
+
