@@ -1,3 +1,14 @@
 <div class="centered"> 
-    <h1>Welcome <%= current_user.username %></h1> 
-</div>
+<h1>Welcome <%= current_user.username %></h1> 
+
+<% current_user.comics.find_all{|comic|comic.public? && !comic.anonymous?}.sort.reverse.each do |comic| %>
+    <a href="/comics/<%=comic.id%>">
+        <article class="comic-box">
+            <p>
+                <strong><%= comic.title %></strong>
+            </p>
+                <%= comic.created_at.strftime("%B %d, %Y at %I:%M%P %Z")%>
+        </article>
+    </a>
+    <br>
+<% end %>

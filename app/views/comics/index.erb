@@ -1,18 +1,18 @@
 <div class="centered">
 <% if @comics.count > 0 %>
 	<h2>Excelsior!</h2>
-		<% @comics.each do |comic| %>
+		<% @comics.sort.reverse.each do |comic| %>
 			<a href="/comics/<%=comic.id%>">
 				    <article class="comic-box">
 			            <p>
 			        		<% if comic.anonymous? %>
 								<strong>Anonymous - </strong>
 							<% else %>
-								<strong><%= comic.user.username %> - </strong>
+								<strong><%= comic.series %> - </strong>
 							<% end %>
 								<em><%= comic.title %></em>
 							</p>
-								<%= comic.created_at.strftime("%B %d, %Y at %I:%M%p %Z")%>
+								<%= comic.created_at.strftime("%B %d, %Y at %I:%M%P")%>
 					</article>
 			</a>
 			<br>

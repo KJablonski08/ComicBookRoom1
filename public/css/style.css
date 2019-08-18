@@ -1,6 +1,6 @@
 body {
     background-image: url("background.jpg");
-    background-position: 0% 40%;
+    background-position: 0% 50%;
     background-size: cover;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -74,7 +74,7 @@ nav {
 
 .login_page{
     margin-top: 100px;
-    text-align: center
+    text-align: center;
 }
 
 #login_button {
@@ -95,7 +95,7 @@ h3 {
 
 .login_form {
     margin-top: 150px;
-    text-align: center
+    text-align: center;
 }
 
 .input {
@@ -113,7 +113,7 @@ h3 {
 
 .signup_form {
     margin-top: 100px;
-    text-align: center
+    text-align: center;
 }
 
 .input {
@@ -154,6 +154,7 @@ h3 {
 .comic-box p{
     border-bottom: 8px solid maroon;
 }
+
 
 /* '/comics/show */
 
