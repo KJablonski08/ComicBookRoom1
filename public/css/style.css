@@ -1,6 +1,6 @@
 body {
     background-image: url("background.jpg");
-    background-position: 0% 50%;
+    background-position: 0% 55%;
     background-size: cover;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -45,6 +45,9 @@ nav {
     background-color: white;
     width: 100%;
     border-bottom: 5px solid Gold;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
 }
 
 .nav-button {
@@ -73,7 +76,7 @@ nav {
 /* '/' */
 
 .login_page{
-    margin-top: 100px;
+    margin-top: 150px;
     text-align: center;
 }
 
@@ -112,7 +115,7 @@ h3 {
 /* '/sessions/signup */
 
 .signup_form {
-    margin-top: 100px;
+    margin-top: 150px;
     text-align: center;
 }
 
@@ -127,10 +130,8 @@ h3 {
     border: none;
 }
 
-/* '/sessions/signup */
-
 .centered{ 
-    margin-top: 50px;
+    margin-top: 100px;
     text-align: center;
 }
 
