@@ -6,6 +6,13 @@ class ComicsController < ApplicationController
         erb :'comics/index'
     end 
 
+    post '/comics/search' do
+        authenticate 
+        @comics = Comic.where("series LIKE ?", "%#{params[:series]}%")
+    
+        erb :'comics/index'
+    end 
+
     get '/comics/new' do
         authenticate
         erb :'comics/new'

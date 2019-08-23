@@ -2,6 +2,13 @@
 <% if @comics.count > 0 %>
 <br/>
 	<h2>Excelsior!</h2>
+
+	<form action='/comics/search' method='post'>
+		<input class="input" type="text" name="series" placeholder="search"/>
+		<input class="submit button" type="submit" value="search">
+	</form>	
+	<br/>
+
 		<% @comics.sort.reverse.each do |comic| %>
 			<a href="/comics/<%=comic.id%>">
 				    <article class="comic-box">
